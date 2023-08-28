@@ -7,7 +7,9 @@ const int n = 51;
 
 string  AllStops[N] = { "fransiayihraparak", "mashtoctumanyan", "mashtocamiryan", "pakshuka","araratkonyak", "kentronakanavtokayan", "usadespanatun",
 "razmakanvostikanutyun","ervanyanvelotrek", "admiralisakov/27","argavand","meqenagorcner", "parakar", "zvartnocAeroport" , "musaler", "ptxunk", "zvartnoc",
-"m-3" , "aknalich" , "mecamor", "maisyan", "armavir", "avtokayanarmavir", "surbhripsime", "DprocN.2", "ejmiacin", "komitasi hraparak", "DprocN.3" };
+"m-3" , "aknalich" , "mecamor", "maisyan", "armavir", "avtokayanarmavir", "surbhripsime", "DprocN.2", "ejmiacin", "komitasi hraparak", "DprocN.3", "royalarmenia", "kvartalhaxtanak",
+"haxtanakipoxoc","gusanasherama","tichina","zoravarandranik","erevancityoganov","erablur","citadel","bjshkakan","mxitarheracuhraparak",
+"elektroset","infekcion","5/8nork","5/6nork"};
 struct bus {
 private:
 	int num;//marshutki hamary
@@ -59,14 +61,15 @@ int main()
 	int m235stops[n] = { 5, 6, 10, 11, 12, 14, 15,16, 17, 18, 19 };
 	int m206stops[n] = { 5, 6, 10, 11, 12, 14, 15,16, 17, 18, 19, 20, 21, 22 };
 	int m202stops[n] = { 5, 6, 10, 11, 12, 14, 15,16, 17, 23, 24, 25, 26, 27 };
-
-	bus m1(100), m2(235), m3(206), m4(202);
+	int m77stops[n] = {28,29,30,31,32,33,34,35,6,5,4,2,1,36,36,38,39,40,41,42};
+	bus m1(100), m2(235), m3(206), m4(202), m5(77);
 	m1.set_bus_stop(m100stops);
 	m2.set_bus_stop(m235stops);
 	m3.set_bus_stop(m206stops);
 	m4.set_bus_stop(m202stops);
+	m5.set_bus_stop(m77stops);
 
-	bus bus_array[] = { m1,m2, m3, m4};
+	bus bus_array[] = { m1,m2, m3, m4, m5};
 
 	int choise;
 	int i;
