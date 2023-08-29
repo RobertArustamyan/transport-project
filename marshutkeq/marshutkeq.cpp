@@ -20,15 +20,8 @@ public:
 	void display_set();//marshutki tvyalneri durs berum
 	void set_bus_stop(int arr[N]);//kangarner avelacnelu hamar
 	int m_name() { return num; }//m_name marshutki hamarna
-	//~bus();//dekonstruktor
 	string* begin_ptr = stops;
 };
-
-//bus::~bus()
-//{
-//	delete[] stops;
-//	cout << num <<"-> objekty anjatvec\n";
-//}
 
 void bus::change_bus_num(int x) // marshutki hamary poxumenq x - ov
 {
@@ -68,8 +61,8 @@ int main()
 	int* m100stops = new int[n] { 1, 2, 3, 4,5,6,7,8,9,10,11,12,13 };
 	int* m235stops = new int[n] { 5, 6, 10, 11, 12, 14, 15,16, 17, 18, 19 };
 	int* m206stops = new int[n] { 5, 6, 10, 11, 12, 14, 15,16, 17, 18, 19, 20, 21, 22 };
-	int* m202stops= new int[n] { 5, 6, 10, 11, 12, 14, 15,16, 17, 23, 24, 25, 26, 27 };
-	int* m77stops = new int[n] {28, 29, 30, 31, 32, 33, 34, 35, 6, 5, 4, 2, 1, 36, 36, 38, 39, 40, 41, 42};
+	int* m202stops = new int[n] { 5, 6, 10, 11, 12, 14, 15,16, 17, 23, 24, 25, 26, 27 };
+	int* m77stops = new int[n] { 28, 29, 30, 31, 32, 33, 34, 35, 6, 5, 4, 2, 1, 36, 36, 38, 39, 40, 41, 42 };
 	bus m1(100), m2(235), m3(206), m4(202), m5(77);
 	m1.set_bus_stop(m100stops);
 	m2.set_bus_stop(m235stops);
@@ -77,7 +70,7 @@ int main()
 	m4.set_bus_stop(m202stops);
 	m5.set_bus_stop(m77stops);
 	delete[] m77stops, m202stops, m206stops, m235stops, m100stops;
-	bus bus_array[] = { m1,m2, m3, m4, m5};
+	bus bus_array[] = { m1,m2, m3, m4, m5 };
 
 	int choise;
 	int i;
