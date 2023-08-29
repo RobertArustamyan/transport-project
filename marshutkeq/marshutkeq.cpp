@@ -13,15 +13,22 @@ string  AllStops[N] = { "fransiayihraparak", "mashtoctumanyan", "mashtocamiryan"
 struct bus {
 private:
 	int num;//marshutki hamary
-	string stops[N] = {"\0"};//tvyal marshutki kangarnery 
+	string* stops = new string[N] {"\0"};//tvyal marshutki kangarnery 
 public:
 	bus(int x) { num = x; } // constructor sarqeluc x in talisenq en arjeqy vori hamarov pti lini marshutken
 	void change_bus_num(int x);//marshutki hamary poxeumenq
 	void display_set();//marshutki tvyalneri durs berum
 	void set_bus_stop(int arr[N]);//kangarner avelacnelu hamar
 	int m_name() { return num; }//m_name marshutki hamarna
+	//~bus();//dekonstruktor
 	string* begin_ptr = stops;
 };
+
+//bus::~bus()
+//{
+//	delete[] stops;
+//	cout << num <<"-> objekty anjatvec\n";
+//}
 
 void bus::change_bus_num(int x) // marshutki hamary poxumenq x - ov
 {
@@ -111,12 +118,10 @@ int main()
 			}
 
 			break;
-		default:
-			cout << "Dzer grac tivy sxal e.\n";
-			break;
 		}
 
 	} while (choise != -1);
+
 	return 0;
 
 
