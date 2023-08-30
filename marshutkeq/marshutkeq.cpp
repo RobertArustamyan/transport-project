@@ -10,6 +10,7 @@ string  AllStops[N] = { "fransiayihraparak", "mashtoctumanyan", "mashtocamiryan"
 "m-3" , "aknalich" , "mecamor", "maisyan", "armavir", "avtokayanarmavir", "surbhripsime", "DprocN.2", "ejmiacin", "komitasi hraparak", "DprocN.3", "royalarmenia", "kvartalhaxtanak",
 "haxtanakipoxoc","gusanasherama","tichina","zoravarandranik","erevancityoganov","erablur","citadel","bjshkakan","mxitarheracuhraparak",
 "elektroset","infekcion","5/8nork","5/6nork"};
+int choise;
 struct bus {
 private:
 	int num;//marshutki hamary
@@ -21,8 +22,15 @@ public:
 	void set_bus_stop(int arr[N]);//kangarner avelacnelu hamar
 	int m_name() { return num; }//m_name marshutki hamarna
 	string* begin_ptr = stops;
+	~bus();
 };
-
+bus::~bus()
+{
+	if (choise == -1) {
+		delete[]stops;
+		cout << num << "-> avartvec\n";
+	}
+}
 void bus::change_bus_num(int x) // marshutki hamary poxumenq x - ov
 {
 	cout << "Marshutki himikva hamary: " << num << "\n";
@@ -54,7 +62,6 @@ void bus::set_bus_stop(int arr[N]) {
 }
 
 bool check_bus(bus x,string a,string b);
-
 int main()
 {
 
@@ -63,16 +70,19 @@ int main()
 	int* m206stops = new int[n] { 5, 6, 10, 11, 12, 14, 15,16, 17, 18, 19, 20, 21, 22 };
 	int* m202stops = new int[n] { 5, 6, 10, 11, 12, 14, 15,16, 17, 23, 24, 25, 26, 27 };
 	int* m77stops = new int[n] { 28, 29, 30, 31, 32, 33, 34, 35, 6, 5, 4, 2, 1, 36, 36, 38, 39, 40, 41, 42 };
+
 	bus m1(100), m2(235), m3(206), m4(202), m5(77);
+
 	m1.set_bus_stop(m100stops);
 	m2.set_bus_stop(m235stops);
 	m3.set_bus_stop(m206stops);
 	m4.set_bus_stop(m202stops);
 	m5.set_bus_stop(m77stops);
+
 	delete[] m77stops, m202stops, m206stops, m235stops, m100stops;
+
 	bus bus_array[] = { m1,m2, m3, m4, m5 };
 
-	int choise;
 	int i;
 	string frstop, tostop; //vortexic vortex
 	do{
